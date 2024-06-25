@@ -76,21 +76,34 @@ let cart = [
 // result.then((res) => { console.log(res); }).catch((err) => { console.log(err); });
 
 
-let div = document.querySelector('div')
-axios('https://fakestoreapi.com/products').then((response) => {
-    let api  = response.data;
-    console.log(api)
-    api.map((item)=>{
-        div.innerHTML += `
-            <img src='${item.image}' width='150'>
-            <h1 id="name">
-            ${item.title}
-            </h1>
-            <p id="des">${item.description}</p>
-            <h3 id="price">
-            ${item.price}
-            </h3>
-            <hr>
-            <br>`
-    })
-})
+// let div = document.querySelector('div')
+// axios('https://fakestoreapi.com/products').then((response) => {
+//     let api  = response.data;
+//     console.log(api)
+//     api.map((item)=>{
+//         div.innerHTML += `
+//             <img src='${item.image}' width='150'>
+//             <h1 id="name">
+//             ${item.title}
+//             </h1>
+//             <p id="des">${item.description}</p>
+//             <h3 id="price">
+//             ${item.price}
+//             </h3>
+//             <hr>
+//             <br>`
+//     })
+// })
+
+async function getData() {
+    try {
+        let data = await fetch('https://jsonplaceholder.typicode.com/todos/1').then((response) => {let api = response.data}
+        
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+
+getData();
